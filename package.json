@@ -4,13 +4,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "postinstall": "manypkg check"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "packageManager": "pnpm@7.15.0",
   "name": "game-zone",
   "dependencies": {
