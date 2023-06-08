@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "DISABLE_ESLINT_PLUGIN=true craco start",
+    "dev": "DISABLE_ESLINT_PLUGIN=true PORT=3001 craco start",
     "build": "DISABLE_ESLINT_PLUGIN=true craco build",
     "test": "craco test",
     "eject": "craco eject"
