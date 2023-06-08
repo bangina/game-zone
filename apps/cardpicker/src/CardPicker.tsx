@@ -17,7 +17,7 @@ export const CardPicker = () => {
   }
 
   return (
-    <Paper shadow="sm" radius="md" p="md" m="10" withBorder>
+    <Paper shadow='sm' radius='md' p='md' m='10' withBorder style={{ border: "2px solid blue" }}>
       <Title>Card Picker!!!</Title>
       <Box
         sx={{
@@ -36,12 +36,7 @@ export const CardPicker = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              background:
-                played !== null
-                  ? index === played
-                    ? "#ccc"
-                    : "white"
-                  : "black",
+              background: played !== null ? (index === played ? "gray" : "white") : "black",
             }}
             key={index}
             onClick={() => {
@@ -55,8 +50,8 @@ export const CardPicker = () => {
       </Box>
       {played !== null && (
         <Button
-          mt="md"
-          size="lg"
+          mt='md'
+          size='lg'
           fullWidth
           onClick={() => {
             setCards(shuffle(OPTIONS));

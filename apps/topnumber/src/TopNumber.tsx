@@ -32,13 +32,13 @@ export const TopNumber = () => {
   }
 
   return (
-    <Paper shadow='sm' radius='md' p='md' m='10' withBorder>
+    <Paper shadow='sm' radius='md' p='md' m='10' withBorder style={{ border: "2px solid red" }}>
       <Title>Top Number</Title>
       {playing && (
         <Button
           mt='md'
           variant='outline'
-          color='violet'
+          color='red'
           size='xl'
           fullWidth
           onClick={() => {
@@ -55,6 +55,7 @@ export const TopNumber = () => {
           mt='md'
           size='xl'
           fullWidth
+          color='red'
           onClick={() => {
             setPlaying(true);
             setTopNumber(pickNumber());
