@@ -1,29 +1,24 @@
-import { Box, Button, Paper, Text, Title } from "@mantine/core";
+import React, { useState } from "react";
+import { Box, Paper, Text, Button, Title } from "@mantine/core";
 import { shuffle } from "lodash";
-import { useState } from "react";
+
 import { useAppShell } from "ui";
+
 const OPTIONS = [10, 5, 2, -1, -2];
-function CardPicker() {
+
+export const CardPicker = () => {
   const [cards, setCards] = useState<number[]>(shuffle(OPTIONS));
   const [played, setPlayed] = useState<number | null>(null);
-  const { addToScore, user } = useAppShell();
-  const handleClickCard = (card: number, index: number) => {
-    addToScore(card);
-    setPlayed(index);
-  };
 
-  const handleClickReplay = () => {
-    setCards(shuffle(OPTIONS));
-    setPlayed(null);
-  };
+  const { addToScore, user } = useAppShell();
 
   if (!user) {
-    return <div>Log in to play</div>;
+    return null;
   }
 
   return (
-    <Paper shadow='sm' radius='md' p='md' m='10' withBorder>
-      <Title>Card Picker</Title>
+    <Paper shadow="sm" radius="md" p="md" m="10" withBorder>
+      <Title>Card Picker!!!</Title>
       <Box
         sx={{
           display: "grid",
@@ -33,30 +28,44 @@ function CardPicker() {
       >
         {cards.map((card, index) => (
           <Box
-            key={`${index}_card`}
             p={5}
             sx={{
-              border: "1px solid black",
-              borderRadius: "5px",
-              cursor: "pointer",
-              backgroundColor: played !== null ? (index === played ? "#ccc" : "white") : "black",
-              height: "100px",
+              borderRadius: 15,
+              height: 200,
+              border: "5px solid black",
               display: "flex",
-              alignItems: "center",
               justifyContent: "center",
+              alignItems: "center",
+              background:
+                played !== null
+                  ? index === played
+                    ? "#ccc"
+                    : "white"
+                  : "black",
             }}
-            onClick={() => handleClickCard(card, index)}
+            key={index}
+            onClick={() => {
+              addToScore(card);
+              setPlayed(index);
+            }}
           >
-            {played !== null && <Text sx={{ fontSize: 20 }}>{card}</Text>}
+            {played !== null && <Text sx={{ fontSize: "40pt" }}>{card}</Text>}
           </Box>
         ))}
       </Box>
       {played !== null && (
-        <Button mt='md' size='lg' fullWidth onClick={() => handleClickReplay()}>
+        <Button
+          mt="md"
+          size="lg"
+          fullWidth
+          onClick={() => {
+            setCards(shuffle(OPTIONS));
+            setPlayed(null);
+          }}
+        >
           Play Again
         </Button>
       )}
     </Paper>
   );
-}
-export default CardPicker;
+};

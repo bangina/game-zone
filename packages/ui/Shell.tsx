@@ -20,7 +20,7 @@ export const Shell: React.FunctionComponent<{ title: string; children: React.Rea
           <Title style={{ color: "white" }}>{title}</Title>
           <Box sx={{ flexGrow: 1 }}></Box>
 
-          {user && (
+          {user && ( 
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Title style={{ color: "white" }} mr='md'>
                 {user}😃 : {score}
