@@ -16,14 +16,14 @@ export const Shell: React.FunctionComponent<{ title: string; children: React.Rea
         },
       }}
       header={
-        <Header p='xs' style={{ background: theme.colors.blue[8] }} height={60}>
+        <Header p='xs' style={{ background: theme.colors.blue[8], display: "flex" }} height={60}>
           <Title style={{ color: "white" }}>{title}</Title>
           <Box sx={{ flexGrow: 1 }}></Box>
 
           {user && (
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Title style={{ color: "white" }} mr='md'>
-                {user} - {score}
+                {user}😃 : {score}
               </Title>
               <Button variant='light' onClick={() => setUser(null)}>
                 Logout
@@ -31,7 +31,7 @@ export const Shell: React.FunctionComponent<{ title: string; children: React.Rea
             </Box>
           )}
           {!user && (
-            <Button variant='light' onClick={() => setUser("Mantine")}>
+            <Button variant='light' onClick={() => setUser("Ena")}>
               Login
             </Button>
           )}
