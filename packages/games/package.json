@@ -1,0 +1,30 @@
+{
+  "name": "games",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "module": "./dist/index.mjs",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "generate:component": "turbo gen react-component",
+    "build": "tsup index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup index.tsx --format esm,cjs --watch --dts --external react"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.9",
+    "@types/react-dom": "^18.2.4",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "0.0.0",
+    "react": "^18.2.0",
+    "tsconfig": "0.0.0",
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@mantine/core": "^6.0.13",
+    "@mantine/hooks": "^6.0.13",
+    "lodash": "^4.17.21",
+    "ui": "workspace:*"
+  }
+}
