@@ -13,7 +13,6 @@ module.exports = () => ({
       add: [
         new ModuleFederationPlugin({
           name: "topnumber",
-
           filename: "remoteEntry.js",
           exposes: {
             "./TopNumber": "./src/TopNumber",
