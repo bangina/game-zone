@@ -15,8 +15,8 @@ module.exports = (_, argv) => ({
           name: "gamezone",
           filename: "remoteEntry.js",
           remotes: {
-            cardpicker: "cardpicker@https://cardpicker.vercel.app/remoteEntry.js",
-            topnumber: "topnumber@https://topnumber.vercel.app/remoteEntry.js",
+            cardpicker: "cardpicker@https://game-zone-cardpicker.vercel.app/remoteEntry.js",
+            topnumber: "topnumber@https://game-zone-topnumber.vercel.app/remoteEntry.js",
           },
           shared: {
             ...deps,
